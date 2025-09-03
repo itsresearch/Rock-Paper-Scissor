@@ -5,6 +5,8 @@ print("Rules are: \n "
       "Rock vs Scissor --> Rock wins \n"
       "Paper vs Scissor --> Scissor wins \n")
 
+player_score = 0
+computer_score = 0
 
 while True:
     print("Enter your choice: Rock, Paper, or Scissor:")
@@ -35,26 +37,41 @@ while True:
         if choice == "Rock":
             if comp_choice == "Paper":
                 print("Paper wins ...")
+                computer_score += 1
             else:
                 print("Rock wins ...")
+                player_score += 1
 
         elif choice == "Paper":
             if comp_choice == "Scissor":
                 print("Scissor wins ...")
+                computer_score += 1
             else:
                 print("Paper wins ...")
+                player_score += 1
 
         elif choice == "Scissor":
             if comp_choice == "Rock":
                 print("Rock wins ...")
+                computer_score += 1
             else:
                 print("Scissor wins ...")   
+                player_score += 1
 
-             
+    print(f"\nScore -> You: {player_score} | Computer: {computer_score}")
     
     # Asking if the user wants to play again
     play_again = input("Do you want to play again? (yes/no): ").lower()
     if play_again != 'yes':
         break
-    
+
+print("\nFinal Score: ")
+print(f"\nYou: {player_score} | Computer: {computer_score}")
+if player_score > computer_score:
+    print("Congratulatons you are the overall winner")
+elif player_score < computer_score:
+    print("Computer wins")
+else:
+    print("It's a draw.")
+
 print("Thanks for playing")
